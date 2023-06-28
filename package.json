@@ -1,0 +1,41 @@
+{
+  "name": "ibmmq",
+  "version": "2.0.0",
+  "description": "Bindings to call IBM MQ API",
+  "main": "./lib/mqi.js",
+  "scripts": {
+    "prebuild": "prebuildify --napi",
+    "install": "node-gyp-build",
+    "postinstall": "node postinstall.js",
+    "lint": "eslint -c .eslintrc.js --ext .ts samples/typescript",
+    "test": "node tests/builtOK.js UNKNOWNQMGR",
+    "clean": "node-gyp clean"
+  },
+  "author": "Mark Taylor",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibm-messaging/mq-mqi-nodejs"
+  },
+  "typings": "./types/index.d.ts",
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/node": "^20.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "eslint": "^8.43.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsdoc": "^46.2.6",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prettier": "^4.2.1",
+    "node-gyp": "^9.4.0"
+  },
+  "gypfile": true,
+  "dependencies": {
+    "node-addon-api": "^7.0.0",
+    "node-gyp-build": "^4.6.0"
+  },
+  "engines": {
+    "node": ">=16.0"
+  }
+}
